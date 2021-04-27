@@ -1,0 +1,19 @@
+<block>
+  <name>Bursts merge</name>
+  <key>mymod_bursts_merge</key>
+  <category>[MYMOD]</category>
+  <import>import mymod</import>
+  <make>mymod.bursts_merge()</make>
+
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+
+</block>

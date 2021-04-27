@@ -1,0 +1,15 @@
+<block>
+  <name>Helloworld</name>
+  <key>mymod_helloworld</key>
+  <category>[MYMOD]</category>
+  <import>import mymod</import>
+  <make>mymod.helloworld()</make>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

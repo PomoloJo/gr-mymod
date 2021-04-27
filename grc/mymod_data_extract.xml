@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<block>
+  <name>Data Extract</name>
+  <key>mymod_data_extract</key>
+  <category>[MYMOD]</category>
+  <import>import mymod</import>
+  <make>mymod.data_extract($cs_mode, $link_flag, $arfcn)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>CS MODE</name>
+    <key>cs_mode</key>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>UPLINK OR DOWNLINK</name>
+    <key>link_flag</key>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>ARFCN</name>
+    <key>arfcn</key>
+    <type>int</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

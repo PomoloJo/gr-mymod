@@ -1,0 +1,7 @@
+/*!
+ * \defgroup block GNU Radio MYMOD C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the MYMOD GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
+

@@ -1,0 +1,38 @@
+<block>
+  <name>Process</name>
+  <key>mymod_process</key>
+  <category>[MYMOD]</category>
+  <import>import mymod</import>
+  <make>mymod.process($filename)</make>  <!--, $flag_save_data-->
+
+  <param>
+    <name>Destination file</name>
+    <key>filename</key>
+    <value>/tmp/bursts</value>
+    <type>file_open</type>
+  </param>
+
+<!--   <param>
+  	<name>Save data</name>
+  	<key>flag_save_data</key>
+  	<type>bool</type>
+  </param> -->
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>out_cs1</name>
+    <type>message</type>
+  	<optional>1</optional>
+  </source>
+
+  <source>
+    <name>out_cs2</name>
+    <type>message</type>
+  	<optional>1</optional>
+  </source>
+  
+</block>
