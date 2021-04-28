@@ -12,6 +12,7 @@
 #include "mymod/process.h"
 #include "mymod/bursts_merge.h"
 #include "mymod/data_extract.h"
+#include "mymod/selector_ff.h"
 %}
 
 
@@ -25,3 +26,5 @@ GR_SWIG_BLOCK_MAGIC2(mymod, process);
 GR_SWIG_BLOCK_MAGIC2(mymod, bursts_merge);
 %include "mymod/data_extract.h"
 GR_SWIG_BLOCK_MAGIC2(mymod, data_extract);
+%include "mymod/selector_ff.h"
+GR_SWIG_BLOCK_MAGIC2(mymod, selector_ff);
