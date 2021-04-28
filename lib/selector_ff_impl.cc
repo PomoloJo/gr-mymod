@@ -25,6 +25,8 @@
 #include <gnuradio/io_signature.h>
 #include "selector_ff_impl.h"
 
+//#include <algorithm>
+
 namespace gr {
   namespace mymod {
 
@@ -40,8 +42,14 @@ namespace gr {
      */
     selector_ff_impl::selector_ff_impl()
       : gr::sync_block("selector_ff",
-              gr::io_signature::make(1, 1, sizeof(float)),
-              gr::io_signature::make(1, 1, sizeof(float)))
+              gr::io_signature::make(1, 5, sizeof(float)),
+              gr::io_signature::make(1, 1, sizeof(float))),
+      d_sum_count(0),
+      d_sum0(0),
+      d_sum1(0),
+      d_sum2(0),
+      d_sum3(0),
+      d_sum4(0)
     {}
 
     /*
@@ -56,16 +64,69 @@ namespace gr {
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {
-      const float *in = (const float *) input_items[0];
-      float *out = (float *) output_items[0];
-
+      const float *in0 = (const float *) input_items[0];
+      const float *in1 = (const float *) input_items[1];
+      const float *in2 = (const float *) input_items[2];
+      const float *in3 = (const float *) input_items[3];
+      const float *in4 = (const float *) input_items[4];
+      float *out = (float *) output_items[0];    
 
         int noi = noutput_items;
-        printf("%d\n", noi);
-        for (int i = 0; i < noi; i++)
+        int max_index = -1;
+
+        if(noi == 1)
         {
-          out[i] = in[i];
+            d_sum0 += in0[0];
+            d_sum1 += in1[0];
+            d_sum2 += in2[0];
+            d_sum3 += in3[0];
+            d_sum4 += in4[0];
+            d_sum_count++;
+
+            if (d_sum_count == 100000)
+            {
+
+              //printf("%f\n", (d_sum2/1000));
+              out[0] = d_sum2/100000;
+              d_sum_count = 0;
+              d_sum0 = 0;
+              d_sum1 = 0;
+              d_sum2 = 0;
+              d_sum3 = 0;
+              d_sum4 = 0;
+            }
         }
+        else
+        {
+          for (int i = 0; i < noi - 1;)
+          {
+            d_sum0 += in0[i];
+            d_sum1 += in1[i];
+            d_sum2 += in2[i];
+            d_sum3 += in3[i];
+            d_sum4 += in4[i];
+
+            d_sum_count++;
+            i += 2;
+
+            if (d_sum_count == 100000)
+            {
+
+              //printf("%f\n", (d_sum2/1000));
+              out[0] = d_sum2/100000;
+              d_sum_count = 0;
+              d_sum0 = 0;
+              d_sum1 = 0;
+              d_sum2 = 0;
+              d_sum3 = 0;
+              d_sum4 = 0;
+            }
+
+          }
+        }
+        //printf("%d \n", max_index);
+        
+
 
       // Tell runtime system how many output items we produced.
       return noutput_items;

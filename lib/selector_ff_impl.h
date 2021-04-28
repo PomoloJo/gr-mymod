@@ -29,6 +29,12 @@ namespace gr {
     class selector_ff_impl : public selector_ff
     {
      private:
+     	int d_sum_count;
+     	float d_sum0;
+        float d_sum1;
+        float d_sum2;
+        float d_sum3;
+        float d_sum4;
       // Nothing to declare in this block.
 
      public:

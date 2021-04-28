@@ -22,7 +22,23 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>in</name>
+    <name>in0</name>
+    <type>float</type>
+  </sink>
+  <sink>
+    <name>in1</name>
+    <type>float</type>
+  </sink>
+  <sink>
+    <name>in2</name>
+    <type>float</type>
+  </sink>
+  <sink>
+    <name>in3</name>
+    <type>float</type>
+  </sink>
+  <sink>
+    <name>in4</name>
     <type>float</type>
   </sink>
 
@@ -34,5 +50,6 @@
   <source>
     <name>out</name>
     <type>float</type>
+    <optional>1</optional>
   </source>
 </block>
