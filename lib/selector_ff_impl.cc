@@ -49,7 +49,8 @@ namespace gr {
       d_sum1(0),
       d_sum2(0),
       d_sum3(0),
-      d_sum4(0)
+      d_sum4(0),
+      d_index(0)
     {}
 
     /*
@@ -86,8 +87,14 @@ namespace gr {
             if (d_sum_count == 100000)
             {
 
-              //printf("%f\n", (d_sum2/1000));
-              out[0] = d_sum2/100000;
+              //printf("%f\n", (d_sum2/100000));
+              //out[0] = d_sum2/100000;
+
+              d_index = d_sum1 > d_sum0 ? 1:0;
+              d_index = d_sum2 > d_sum1 ? 2:1;
+              d_index = d_sum3 > d_sum2 ? 3:2;
+              d_index = d_sum4 > d_sum3 ? 4:3;
+
               d_sum_count = 0;
               d_sum0 = 0;
               d_sum1 = 0;
@@ -112,19 +119,29 @@ namespace gr {
             if (d_sum_count == 100000)
             {
 
-              //printf("%f\n", (d_sum2/1000));
-              out[0] = d_sum2/100000;
+              //printf("%f\n", (d_sum2/100000));
+              //out[0] = d_sum2/100000;
+
+              d_index = 0;
+              d_index = (d_sum1>20000?d_sum1:0) > d_sum0 ? 1:d_index;
+              d_index = (d_sum2>20000?d_sum2:0) > d_sum1 ? 2:d_index;
+              d_index = (d_sum3>20000?d_sum3:0) > d_sum2 ? 3:d_index;
+              d_index = (d_sum4>20000?d_sum4:0) > d_sum3 ? 4:d_index;
+
               d_sum_count = 0;
               d_sum0 = 0;
               d_sum1 = 0;
               d_sum2 = 0;
               d_sum3 = 0;
               d_sum4 = 0;
+
+              printf("%d \n", d_index);
             }
 
           }
         }
         //printf("%d \n", max_index);
+        out[0] = d_index;
         
 
 

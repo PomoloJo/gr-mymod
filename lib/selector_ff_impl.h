@@ -35,6 +35,8 @@ namespace gr {
         float d_sum2;
         float d_sum3;
         float d_sum4;
+
+        int d_index; 
       // Nothing to declare in this block.
 
      public:
