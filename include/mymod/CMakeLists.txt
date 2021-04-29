@@ -26,5 +26,6 @@ install(FILES
     process.h
     bursts_merge.h
     data_extract.h
-    selector_ff.h DESTINATION include/mymod
+    selector_ff.h
+    data_gate.h DESTINATION include/mymod
 )

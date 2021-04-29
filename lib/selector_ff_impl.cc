@@ -26,7 +26,7 @@
 #include "selector_ff_impl.h"
 
 #define SUMCOUNT 400000
-#define THROTTLE 0.2
+#define THROTTLE 0.3
 
 //#include <algorithm>
 
@@ -46,7 +46,7 @@ namespace gr {
     selector_ff_impl::selector_ff_impl()
       : gr::sync_block("selector_ff",
               gr::io_signature::make(1, 5, sizeof(float)),
-              gr::io_signature::make(1, 1, sizeof(float))),
+              gr::io_signature::make(0,0,0)),
       d_sum_count(0),
       d_sum0(0),
       d_sum1(0),
@@ -54,7 +54,9 @@ namespace gr {
       d_sum3(0),
       d_sum4(0),
       d_index(0)
-    {}
+    {
+        message_port_register_out(pmt::mp("out"));
+    }
 
     /*
      * Our virtual destructor.
@@ -73,7 +75,7 @@ namespace gr {
       const float *in2 = (const float *) input_items[2];
       const float *in3 = (const float *) input_items[3];
       const float *in4 = (const float *) input_items[4];
-      float *out = (float *) output_items[0];    
+      //float *out = (float *) output_items[0];    
 
         int max_index = -1;
 
@@ -111,6 +113,9 @@ namespace gr {
 
               //out[0] = d_index;
               //printf("%d \n", d_index);
+              pmt::pmt_t msg_binary_blob = pmt::make_blob(&d_index, 1);
+              pmt::pmt_t burst_out = pmt::cons(pmt::PMT_NIL, msg_binary_blob);
+              message_port_pub(pmt::mp("out"), burst_out);
             }
         }
         else
@@ -152,8 +157,11 @@ namespace gr {
               d_sum3 = 0;
               d_sum4 = 0; 
 
-              out[0] = d_index;
-              printf("%d \n", d_index);
+              //out[0] = d_index;
+              pmt::pmt_t msg_binary_blob = pmt::make_blob(&d_index, 1);
+              pmt::pmt_t burst_out = pmt::cons(pmt::PMT_NIL, msg_binary_blob);
+              message_port_pub(pmt::mp("out"), burst_out);
+              //printf("%d \n", d_index);
             }
 
           }

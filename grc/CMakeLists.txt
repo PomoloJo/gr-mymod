@@ -23,5 +23,6 @@ install(FILES
     mymod_process_py_ui.xml
     mymod_bursts_merge.xml
     mymod_data_extract.xml
-    mymod_selector_ff.xml DESTINATION share/gnuradio/grc/blocks
+    mymod_selector_ff.xml
+    mymod_data_gate.xml DESTINATION share/gnuradio/grc/blocks
 )
