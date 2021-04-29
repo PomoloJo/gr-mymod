@@ -75,10 +75,9 @@ namespace gr {
       const float *in4 = (const float *) input_items[4];
       float *out = (float *) output_items[0];    
 
-        int noi = noutput_items;
         int max_index = -1;
 
-        if(noi == 1)
+        if(noutput_items == 1)
         {
             d_sum0 += in0[0];
             d_sum1 += in1[0];
@@ -92,8 +91,8 @@ namespace gr {
 
               int index_temp = 0;
               int sum_max = d_sum0;
-              int sum_list[5] = {d_sum0, d_sum1, d_sum2, d_sum3, d_sum4};
-              for(int i = 1; i < 5; i++)
+              int sum_list[6] = {0, d_sum0, d_sum1, d_sum2, d_sum3, d_sum4};
+              for(int i = 1; i < 6; i++)
               {
                 if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) > sum_max)
                 {
@@ -109,11 +108,14 @@ namespace gr {
               d_sum2 = 0;
               d_sum3 = 0;
               d_sum4 = 0;
+
+              //out[0] = d_index;
+              //printf("%d \n", d_index);
             }
         }
         else
         {
-          for (int i = 0; i < noi - 1;)
+          for (int i = 0; i < noutput_items - 1;)
           {
             d_sum0 += in0[i];
             d_sum1 += in1[i];
@@ -132,8 +134,8 @@ namespace gr {
 
               int index_temp = 0;
               int sum_max = d_sum0;
-              int sum_list[5] = {d_sum0, d_sum1, d_sum2, d_sum3, d_sum4};
-              for(int i = 1; i < 5; i++)
+              int sum_list[6] = {0, d_sum0, d_sum1, d_sum2, d_sum3, d_sum4};
+              for(int i = 1; i < 6; i++)
               {
                 if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) > sum_max)
                 {
@@ -148,15 +150,16 @@ namespace gr {
               d_sum1 = 0;
               d_sum2 = 0;
               d_sum3 = 0;
-              d_sum4 = 0;
+              d_sum4 = 0; 
 
+              out[0] = d_index;
               printf("%d \n", d_index);
             }
 
           }
         }
-        //printf("%d \n", max_index);
-        out[0] = d_index;
+        // printf("%d \n", d_index);
+        // out[0] = d_index;
         
 
 
