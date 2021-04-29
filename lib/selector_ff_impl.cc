@@ -25,6 +25,9 @@
 #include <gnuradio/io_signature.h>
 #include "selector_ff_impl.h"
 
+#define SUMCOUNT 400000
+#define THROTTLE 0.2
+
 //#include <algorithm>
 
 namespace gr {
@@ -84,16 +87,21 @@ namespace gr {
             d_sum4 += in4[0];
             d_sum_count++;
 
-            if (d_sum_count == 100000)
+            if (d_sum_count == SUMCOUNT)
             {
 
-              //printf("%f\n", (d_sum2/100000));
-              //out[0] = d_sum2/100000;
-
-              d_index = d_sum1 > d_sum0 ? 1:0;
-              d_index = d_sum2 > d_sum1 ? 2:1;
-              d_index = d_sum3 > d_sum2 ? 3:2;
-              d_index = d_sum4 > d_sum3 ? 4:3;
+              int index_temp = 0;
+              int sum_max = d_sum0;
+              int sum_list[5] = {d_sum0, d_sum1, d_sum2, d_sum3, d_sum4};
+              for(int i = 1; i < 5; i++)
+              {
+                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) > sum_max)
+                {
+                  sum_max = sum_list[i];
+                  index_temp = i;
+                }
+              }
+              d_index = index_temp;
 
               d_sum_count = 0;
               d_sum0 = 0;
@@ -116,17 +124,24 @@ namespace gr {
             d_sum_count++;
             i += 2;
 
-            if (d_sum_count == 100000)
+            if (d_sum_count == SUMCOUNT)
             {
 
               //printf("%f\n", (d_sum2/100000));
               //out[0] = d_sum2/100000;
 
-              d_index = 0;
-              d_index = (d_sum1>20000?d_sum1:0) > d_sum0 ? 1:d_index;
-              d_index = (d_sum2>20000?d_sum2:0) > d_sum1 ? 2:d_index;
-              d_index = (d_sum3>20000?d_sum3:0) > d_sum2 ? 3:d_index;
-              d_index = (d_sum4>20000?d_sum4:0) > d_sum3 ? 4:d_index;
+              int index_temp = 0;
+              int sum_max = d_sum0;
+              int sum_list[5] = {d_sum0, d_sum1, d_sum2, d_sum3, d_sum4};
+              for(int i = 1; i < 5; i++)
+              {
+                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) > sum_max)
+                {
+                  sum_max = sum_list[i];
+                  index_temp = i;
+                }
+              }
+              d_index = index_temp;
 
               d_sum_count = 0;
               d_sum0 = 0;
