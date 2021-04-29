@@ -92,10 +92,17 @@ namespace gr {
     void
     data_gate_impl::changeIndex (pmt::pmt_t block_in)
     {
+        printf("current index: %d \n", d_index);
         pmt::pmt_t block_without_header = pmt::cdr(block_in);
         uint8_t * block_in_int8 = (uint8_t *)pmt::blob_data(block_without_header);
-        d_index = block_in_int8[0] - 1;
-        printf("%d \n",d_index);
+        if(block_in_int8[0] > 0)
+        {
+          if(d_index != block_in_int8[0] - 1)
+          {
+            d_index = block_in_int8[0] - 1;
+            printf("!!! index change: %d \n",d_index);
+          }
+        } 
     }
 
   } /* namespace mymod */
