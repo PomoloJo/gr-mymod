@@ -41,6 +41,63 @@
     <name>in_u4</name>
     <type>complex</type>
   </sink>
+  <sink>
+    <name>in_u5</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u6</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u7</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u8</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u9</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u10</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u11</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u12</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u13</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u14</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u15</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u16</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u17</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u18</name>
+    <type>complex</type>
+  </sink>
+
 
   <sink>
     <name>in_d0</name>
@@ -62,6 +119,63 @@
     <name>in_d4</name>
     <type>complex</type>
   </sink>
+  <sink>
+    <name>in_d5</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d6</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d7</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d8</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d9</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d10</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d11</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d12</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d13</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d14</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d15</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d16</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d17</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d18</name>
+    <type>complex</type>
+  </sink>
+
 
   <sink>
     <name>arfcn</name>

@@ -35,6 +35,20 @@ namespace gr {
         float d_sum2;
         float d_sum3;
         float d_sum4;
+        float d_sum5;
+        float d_sum6;
+        float d_sum7;
+        float d_sum8;
+        float d_sum9;
+        float d_sum10;
+        float d_sum11;
+        float d_sum12;
+        float d_sum13;
+        float d_sum14;
+        float d_sum15;
+        float d_sum16;
+        float d_sum17;
+        float d_sum18;
 
         int d_index; 
       // Nothing to declare in this block.
