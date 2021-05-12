@@ -30,6 +30,8 @@ list(APPEND mymod_sources
     process_impl.cc
     bursts_merge_impl.cc
     data_extract_impl.cc
+    selector_ff_impl.cc
+    data_gate_impl.cc
 )
 
 set(mymod_sources "${mymod_sources}" PARENT_SCOPE)

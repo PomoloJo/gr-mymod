@@ -25,5 +25,7 @@ install(FILES
     helloworld.h
     process.h
     bursts_merge.h
-    data_extract.h DESTINATION include/mymod
+    data_extract.h
+    selector_ff.h
+    data_gate.h DESTINATION include/mymod
 )

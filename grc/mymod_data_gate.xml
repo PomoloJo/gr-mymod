@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<block>
+  <name>data_gate</name>
+  <key>mymod_data_gate</key>
+  <category>[MYMOD]</category>
+  <import>import mymod</import>
+  <make>mymod.data_gate()</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <!-- <param>
+    <name>...</name>
+    <key>...</key>
+    <type>...</type>
+  </param> -->
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in_u0</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u1</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u2</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u3</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u4</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u5</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u6</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u7</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u8</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u9</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u10</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u11</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u12</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u13</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u14</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u15</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u16</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u17</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_u18</name>
+    <type>complex</type>
+  </sink>
+
+
+  <sink>
+    <name>in_d0</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d1</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d2</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d3</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d4</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d5</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d6</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d7</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d8</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d9</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d10</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d11</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d12</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d13</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d14</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d15</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d16</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d17</name>
+    <type>complex</type>
+  </sink>
+  <sink>
+    <name>in_d18</name>
+    <type>complex</type>
+  </sink>
+
+
+  <sink>
+    <name>arfcn</name>
+    <type>message</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out0</name>
+    <type>complex</type>
+    <optional>1</optional>
+  </source>
+
+  <source>
+    <name>out1</name>
+    <type>complex</type>
+    <optional>1</optional>
+  </source>
+</block>

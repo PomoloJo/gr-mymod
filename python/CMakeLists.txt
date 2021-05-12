@@ -47,3 +47,5 @@ GR_ADD_TEST(qa_mysink ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_mysink
 GR_ADD_TEST(qa_process_py_ui ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_process_py_ui.py)
 GR_ADD_TEST(qa_bursts_merge ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_bursts_merge.py)
 GR_ADD_TEST(qa_data_extract ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_data_extract.py)
+GR_ADD_TEST(qa_selector_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_selector_ff.py)
+GR_ADD_TEST(qa_data_gate ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_data_gate.py)

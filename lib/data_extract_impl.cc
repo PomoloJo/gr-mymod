@@ -209,7 +209,7 @@ namespace gr {
         {
             if(flag_1002 < 0)
             {
-                if(data_send[i] == 16 and data_send[i - 1] != 16 and data_send[i + 1] == 2)
+                if(data_send[i] == 16 and data_send[i + 1] == 2)
                   flag_1002 = i;
             }
             else if(data_send[i] == 16 and data_send[i - 1] == 16)
