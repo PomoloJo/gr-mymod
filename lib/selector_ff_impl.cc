@@ -133,7 +133,8 @@ namespace gr {
             if (d_sum_count == SUMCOUNT)
             {
 
-              int index_temp = 0;
+              //int index_temp = 0;//bug
+              int index_temp = 1; 
               int sum_max = d_sum0;
               int sum_list[20] = 
               {0, d_sum0, d_sum1, d_sum2, d_sum3, d_sum4, d_sum5, d_sum6, d_sum7, d_sum8, d_sum9,
@@ -209,7 +210,8 @@ namespace gr {
               //printf("%f\n", (d_sum2/100000));
               //out[0] = d_sum2/100000;
 
-              int index_temp = 0;
+              //int index_temp = 0;//bug
+              int index_temp = 1;
               int sum_max = d_sum0;
               int sum_list[20] = 
               {0, d_sum0, d_sum1, d_sum2, d_sum3, d_sum4, d_sum5, d_sum6, d_sum7, d_sum8, d_sum9,

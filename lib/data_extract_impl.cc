@@ -202,8 +202,8 @@ namespace gr {
         int flag_1002 = -1;
         int flag_1003 = -1;
         int flag_10[10] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-        if(data_send[0] == 16 and data_send[1] == 2)
-            flag_1002 = 0;
+        // if(data_send[0] == 16 and data_send[1] == 2)
+        //     flag_1002 = 0;
         int count_10 = 0;
         for(int i = 1; i < index - 1; i++)
         {
