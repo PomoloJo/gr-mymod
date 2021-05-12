@@ -40,7 +40,7 @@ namespace gr {
      */
     data_gate_impl::data_gate_impl()
       : gr::sync_block("data_gate",
-              gr::io_signature::make(1, 10, sizeof(gr_complex)),
+              gr::io_signature::make(1, 38, sizeof(gr_complex)),
               gr::io_signature::make(1, 2, sizeof(gr_complex))),
       d_index(0)
     {
