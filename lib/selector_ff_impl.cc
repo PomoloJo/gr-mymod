@@ -133,15 +133,14 @@ namespace gr {
             if (d_sum_count == SUMCOUNT)
             {
 
-              //int index_temp = 0;//bug
-              int index_temp = 1; 
+              int index_temp = 0;
               int sum_max = d_sum0;
               int sum_list[20] = 
               {0, d_sum0, d_sum1, d_sum2, d_sum3, d_sum4, d_sum5, d_sum6, d_sum7, d_sum8, d_sum9,
                 d_sum10, d_sum11, d_sum12, d_sum13, d_sum14, d_sum15, d_sum16, d_sum17, d_sum18};
               for(int i = 1; i < 20; i++)
               {
-                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) > sum_max)
+                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) >= sum_max)
                 {
                   sum_max = sum_list[i];
                   index_temp = i;
@@ -210,15 +209,14 @@ namespace gr {
               //printf("%f\n", (d_sum2/100000));
               //out[0] = d_sum2/100000;
 
-              //int index_temp = 0;//bug
-              int index_temp = 1;
+              int index_temp = 0;
               int sum_max = d_sum0;
               int sum_list[20] = 
               {0, d_sum0, d_sum1, d_sum2, d_sum3, d_sum4, d_sum5, d_sum6, d_sum7, d_sum8, d_sum9,
                 d_sum10, d_sum11, d_sum12, d_sum13, d_sum14, d_sum15, d_sum16, d_sum17, d_sum18};
               for(int i = 1; i < 20; i++)
               {
-                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) > sum_max)
+                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) >= sum_max)
                 {
                   sum_max = sum_list[i];
                   index_temp = i;
