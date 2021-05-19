@@ -140,7 +140,7 @@ namespace gr {
                 d_sum10, d_sum11, d_sum12, d_sum13, d_sum14, d_sum15, d_sum16, d_sum17, d_sum18};
               for(int i = 1; i < 20; i++)
               {
-                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) > sum_max)
+                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) >= sum_max)
                 {
                   sum_max = sum_list[i];
                   index_temp = i;
@@ -216,7 +216,7 @@ namespace gr {
                 d_sum10, d_sum11, d_sum12, d_sum13, d_sum14, d_sum15, d_sum16, d_sum17, d_sum18};
               for(int i = 1; i < 20; i++)
               {
-                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) > sum_max)
+                if((sum_list[i] > SUMCOUNT*THROTTLE ? sum_list[i] : 0) >= sum_max)
                 {
                   sum_max = sum_list[i];
                   index_temp = i;
