@@ -18,39 +18,33 @@
  * Boston, MA 02110-1301, USA.
  */
 
+#ifndef INCLUDED_MYMOD_FFT2MSG_IMPL_H
+#define INCLUDED_MYMOD_FFT2MSG_IMPL_H
 
-#ifndef INCLUDED_MYMOD_DATA_EXTRACT_H
-#define INCLUDED_MYMOD_DATA_EXTRACT_H
-
-#include <mymod/api.h>
-#include <gnuradio/block.h>
+#include <mymod/fft2msg.h>
 
 namespace gr {
   namespace mymod {
 
-    /*!
-     * \brief <+description of block+>
-     * \ingroup mymod
-     *
-     */
-    class MYMOD_API data_extract : virtual public gr::block
+    class fft2msg_impl : public fft2msg
     {
-     public:
-      typedef boost::shared_ptr<data_extract> sptr;
+     private:
+        int d_count;
+        float d_fft_data[1024];
+      // Nothing to declare in this block.
 
-      /*!
-       * \brief Return a shared_ptr to a new instance of mymod::data_extract.
-       *
-       * To avoid accidental use of raw pointers, mymod::data_extract's
-       * constructor is in a private implementation
-       * class. mymod::data_extract::make is the public interface for
-       * creating new instances.
-       */
-      static sptr make(const int &cs_mode, const int &link_flag, const int &arfcn);
+     public:
+      fft2msg_impl();
+      ~fft2msg_impl();
+
+      // Where all the action really happens
+      int work(int noutput_items,
+         gr_vector_const_void_star &input_items,
+         gr_vector_void_star &output_items);
     };
 
   } // namespace mymod
 } // namespace gr
 
-#endif /* INCLUDED_MYMOD_DATA_EXTRACT_H */
+#endif /* INCLUDED_MYMOD_FFT2MSG_IMPL_H */
 

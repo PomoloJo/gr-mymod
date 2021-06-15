@@ -24,5 +24,6 @@ install(FILES
     mymod_bursts_merge.xml
     mymod_data_extract.xml
     mymod_selector_ff.xml
-    mymod_data_gate.xml DESTINATION share/gnuradio/grc/blocks
+    mymod_data_gate.xml
+    mymod_fft2msg.xml DESTINATION share/gnuradio/grc/blocks
 )

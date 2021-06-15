@@ -32,6 +32,7 @@ list(APPEND mymod_sources
     data_extract_impl.cc
     selector_ff_impl.cc
     data_gate_impl.cc
+    fft2msg_impl.cc
 )
 
 set(mymod_sources "${mymod_sources}" PARENT_SCOPE)

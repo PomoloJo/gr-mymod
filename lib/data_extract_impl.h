@@ -177,7 +177,7 @@ namespace gr {
    
 
      public:
-      data_extract_impl(int cs_mode, int link_flag, int arfcn);
+      data_extract_impl(const int &cs_mode, const int &link_flag, const int &arfcn);
       ~data_extract_impl();
 
       void extract (pmt::pmt_t);

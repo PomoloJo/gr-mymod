@@ -34,7 +34,7 @@ namespace gr {
   namespace mymod {
 
     data_extract::sptr
-    data_extract::make(int cs_mode, int link_flag, int arfcn)
+    data_extract::make(const int &cs_mode, const int &link_flag, const int &arfcn)
     {
       return gnuradio::get_initial_sptr
         (new data_extract_impl(cs_mode, link_flag, arfcn));
@@ -43,7 +43,7 @@ namespace gr {
     /*
      * The private constructor
      */
-    data_extract_impl::data_extract_impl(int cs_mode, int link_flag, int arfcn)
+    data_extract_impl::data_extract_impl(const int &cs_mode,const int &link_flag,const int &arfcn)
       : gr::block("data_extract",
               gr::io_signature::make(0,0,0),
               gr::io_signature::make(0,0,0)),

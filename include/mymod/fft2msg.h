@@ -19,11 +19,11 @@
  */
 
 
-#ifndef INCLUDED_MYMOD_DATA_EXTRACT_H
-#define INCLUDED_MYMOD_DATA_EXTRACT_H
+#ifndef INCLUDED_MYMOD_FFT2MSG_H
+#define INCLUDED_MYMOD_FFT2MSG_H
 
 #include <mymod/api.h>
-#include <gnuradio/block.h>
+#include <gnuradio/sync_block.h>
 
 namespace gr {
   namespace mymod {
@@ -33,24 +33,24 @@ namespace gr {
      * \ingroup mymod
      *
      */
-    class MYMOD_API data_extract : virtual public gr::block
+    class MYMOD_API fft2msg : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<data_extract> sptr;
+      typedef boost::shared_ptr<fft2msg> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of mymod::data_extract.
+       * \brief Return a shared_ptr to a new instance of mymod::fft2msg.
        *
-       * To avoid accidental use of raw pointers, mymod::data_extract's
+       * To avoid accidental use of raw pointers, mymod::fft2msg's
        * constructor is in a private implementation
-       * class. mymod::data_extract::make is the public interface for
+       * class. mymod::fft2msg::make is the public interface for
        * creating new instances.
        */
-      static sptr make(const int &cs_mode, const int &link_flag, const int &arfcn);
+      static sptr make();
     };
 
   } // namespace mymod
 } // namespace gr
 
-#endif /* INCLUDED_MYMOD_DATA_EXTRACT_H */
+#endif /* INCLUDED_MYMOD_FFT2MSG_H */
 

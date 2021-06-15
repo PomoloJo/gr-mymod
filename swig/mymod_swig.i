@@ -14,6 +14,7 @@
 #include "mymod/data_extract.h"
 #include "mymod/selector_ff.h"
 #include "mymod/data_gate.h"
+#include "mymod/fft2msg.h"
 %}
 
 
@@ -31,3 +32,5 @@ GR_SWIG_BLOCK_MAGIC2(mymod, data_extract);
 GR_SWIG_BLOCK_MAGIC2(mymod, selector_ff);
 %include "mymod/data_gate.h"
 GR_SWIG_BLOCK_MAGIC2(mymod, data_gate);
+%include "mymod/fft2msg.h"
+GR_SWIG_BLOCK_MAGIC2(mymod, fft2msg);
